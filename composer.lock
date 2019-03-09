@@ -4,11 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-<<<<<<< HEAD
-    "content-hash": "968780a49df3eef918ebbc1607d7cf6b",
-=======
     "content-hash": "10812742cd79fb6789a0f6f82afb5523",
->>>>>>> 3.8.6
     "packages": [
         {
             "name": "Afterster/php-echonest-api",
@@ -593,63 +589,6 @@
                 "caching"
             ],
             "time": "2017-07-22T12:49:21+00:00"
-<<<<<<< HEAD
-        },
-        {
-            "name": "doctrine/lexer",
-            "version": "v1.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/doctrine/lexer.git",
-                "reference": "83893c552fd2045dd78aef794c31e694c37c0b8c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/lexer/zipball/83893c552fd2045dd78aef794c31e694c37c0b8c",
-                "reference": "83893c552fd2045dd78aef794c31e694c37c0b8c",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.2"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Doctrine\\Common\\Lexer\\": "lib/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Roman Borschel",
-                    "email": "roman@code-factory.org"
-                },
-                {
-                    "name": "Guilherme Blanco",
-                    "email": "guilhermeblanco@gmail.com"
-                },
-                {
-                    "name": "Johannes Schmitt",
-                    "email": "schmittjoh@gmail.com"
-                }
-            ],
-            "description": "Base library for a lexer that can be used in Top-Down, Recursive Descent Parsers.",
-            "homepage": "http://www.doctrine-project.org",
-            "keywords": [
-                "lexer",
-                "parser"
-            ],
-            "time": "2014-09-09T13:34:57+00:00"
-=======
->>>>>>> 3.8.6
         },
         {
             "name": "dropbox/dropbox-sdk",
@@ -737,146 +676,6 @@
                 "event-emitter"
             ],
             "time": "2017-07-17T17:39:19+00:00"
-<<<<<<< HEAD
-        },
-        {
-            "name": "friendsofphp/php-cs-fixer",
-            "version": "v2.9.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/FriendsOfPHP/PHP-CS-Fixer.git",
-                "reference": "454ddbe65da6a9297446f442bad244e8a99a9a38"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/454ddbe65da6a9297446f442bad244e8a99a9a38",
-                "reference": "454ddbe65da6a9297446f442bad244e8a99a9a38",
-                "shasum": ""
-            },
-            "require": {
-                "composer/semver": "^1.4",
-                "doctrine/annotations": "^1.2",
-                "ext-json": "*",
-                "ext-tokenizer": "*",
-                "gecko-packages/gecko-php-unit": "^2.0 || ^3.0",
-                "php": "^5.6 || >=7.0 <7.3",
-                "php-cs-fixer/diff": "^1.2",
-                "symfony/console": "^3.2 || ^4.0",
-                "symfony/event-dispatcher": "^3.0 || ^4.0",
-                "symfony/filesystem": "^3.0 || ^4.0",
-                "symfony/finder": "^3.0 || ^4.0",
-                "symfony/options-resolver": "^3.0 || ^4.0",
-                "symfony/polyfill-php70": "^1.0",
-                "symfony/polyfill-php72": "^1.4",
-                "symfony/process": "^3.0 || ^4.0",
-                "symfony/stopwatch": "^3.0 || ^4.0"
-            },
-            "conflict": {
-                "hhvm": "*"
-            },
-            "require-dev": {
-                "johnkary/phpunit-speedtrap": "^1.1 || ^2.0@dev",
-                "justinrainbow/json-schema": "^5.0",
-                "mikey179/vfsstream": "^1.6",
-                "php-coveralls/php-coveralls": "^2.0",
-                "php-cs-fixer/accessible-object": "^1.0",
-                "phpunit/phpunit": "^5.7.23 || ^6.4.3",
-                "symfony/phpunit-bridge": "^3.2.2 || ^4.0"
-            },
-            "suggest": {
-                "ext-mbstring": "For handling non-UTF8 characters in cache signature.",
-                "symfony/polyfill-mbstring": "When enabling `ext-mbstring` is not possible."
-            },
-            "bin": [
-                "php-cs-fixer"
-            ],
-            "type": "application",
-            "autoload": {
-                "psr-4": {
-                    "PhpCsFixer\\": "src/"
-                },
-                "classmap": [
-                    "tests/Test/Assert/AssertTokensTrait.php",
-                    "tests/Test/AbstractFixerTestCase.php",
-                    "tests/Test/AbstractIntegrationTestCase.php",
-                    "tests/Test/IntegrationCase.php",
-                    "tests/Test/IntegrationCaseFactory.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Dariusz Rumiński",
-                    "email": "dariusz.ruminski@gmail.com"
-                },
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                }
-            ],
-            "description": "A tool to automatically fix PHP code style",
-            "time": "2017-12-08T16:36:20+00:00"
-        },
-        {
-            "name": "gecko-packages/gecko-php-unit",
-            "version": "v2.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/GeckoPackages/GeckoPHPUnit.git",
-                "reference": "ab525fac9a9ffea219687f261b02008b18ebf2d1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/GeckoPackages/GeckoPHPUnit/zipball/ab525fac9a9ffea219687f261b02008b18ebf2d1",
-                "reference": "ab525fac9a9ffea219687f261b02008b18ebf2d1",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.3.6 || ^7.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^4.8.35 || ^5.4.3"
-            },
-            "suggest": {
-                "ext-dom": "When testing with xml.",
-                "ext-libxml": "When testing with xml.",
-                "phpunit/phpunit": "This is an extension for it so make sure you have it some way."
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "GeckoPackages\\PHPUnit\\": "src/PHPUnit"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "Additional PHPUnit asserts and constraints.",
-            "homepage": "https://github.com/GeckoPackages",
-            "keywords": [
-                "extension",
-                "filesystem",
-                "phpunit"
-            ],
-            "time": "2017-08-23T07:39:54+00:00"
-        },
-        {
-            "name": "gettext/gettext",
-            "version": "v4.4.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/oscarotero/Gettext.git",
-                "reference": "4f57f004635cc6311a20815ebfdc0757cb337113"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/oscarotero/Gettext/zipball/4f57f004635cc6311a20815ebfdc0757cb337113",
-                "reference": "4f57f004635cc6311a20815ebfdc0757cb337113",
-=======
         },
         {
             "name": "gettext/gettext",
@@ -890,7 +689,6 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/oscarotero/Gettext/zipball/ab5e863de2f60806d02e6e6081e21efd45249168",
                 "reference": "ab5e863de2f60806d02e6e6081e21efd45249168",
->>>>>>> 3.8.6
                 "shasum": ""
             },
             "require": {
@@ -939,11 +737,7 @@
                 "po",
                 "translation"
             ],
-<<<<<<< HEAD
-            "time": "2017-08-09T16:59:46+00:00"
-=======
             "time": "2018-02-21T18:49:59+00:00"
->>>>>>> 3.8.6
         },
         {
             "name": "gettext/languages",
@@ -1239,7 +1033,6 @@
             "extra": {
                 "branch-alias": {
                     "dev-master": "6.2-dev"
-<<<<<<< HEAD
                 }
             },
             "autoload": {
@@ -1300,73 +1093,8 @@
                     "dev-master": "1.4-dev"
                 }
             },
-=======
-                }
-            },
->>>>>>> 3.8.6
-            "autoload": {
-                "files": [
-                    "src/functions_include.php"
-                ],
-                "psr-4": {
-<<<<<<< HEAD
-=======
-                    "GuzzleHttp\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Michael Dowling",
-                    "email": "mtdowling@gmail.com",
-                    "homepage": "https://github.com/mtdowling"
-                }
-            ],
-            "description": "Guzzle is a PHP HTTP client library",
-            "homepage": "http://guzzlephp.org/",
-            "keywords": [
-                "client",
-                "curl",
-                "framework",
-                "http",
-                "http client",
-                "rest",
-                "web service"
-            ],
-            "time": "2017-06-22T18:50:49+00:00"
-        },
-        {
-            "name": "guzzlehttp/promises",
-            "version": "v1.3.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/guzzle/promises.git",
-                "reference": "a59da6cf61d80060647ff4d3eb2c03a2bc694646"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/promises/zipball/a59da6cf61d80060647ff4d3eb2c03a2bc694646",
-                "reference": "a59da6cf61d80060647ff4d3eb2c03a2bc694646",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.5.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^4.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.4-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
->>>>>>> 3.8.6
                     "GuzzleHttp\\Promise\\": "src/"
                 },
                 "files": [
@@ -1520,21 +1248,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/JamesHeinrich/getID3.git",
-<<<<<<< HEAD
-                "reference": "17d96496cfa79740a1198fbf5f95baf76d2629fd"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/JamesHeinrich/getID3/zipball/17d96496cfa79740a1198fbf5f95baf76d2629fd",
-                "reference": "17d96496cfa79740a1198fbf5f95baf76d2629fd",
-=======
                 "reference": "19bb4c8440119772ce4ed5007e61f0e64dc7e8d3"
             },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/JamesHeinrich/getID3/zipball/19bb4c8440119772ce4ed5007e61f0e64dc7e8d3",
                 "reference": "19bb4c8440119772ce4ed5007e61f0e64dc7e8d3",
->>>>>>> 3.8.6
                 "shasum": ""
             },
             "require": {
@@ -1562,11 +1281,7 @@
                 "php",
                 "tags"
             ],
-<<<<<<< HEAD
-            "time": "2017-09-29T14:43:47+00:00"
-=======
             "time": "2018-02-18T15:41:56+00:00"
->>>>>>> 3.8.6
         },
         {
             "name": "jeromeetienne/jquery-qrcode",
@@ -1589,121 +1304,6 @@
                 }
             },
             "time": "2016-01-12T10:51:25+00:00"
-<<<<<<< HEAD
-        },
-        {
-            "name": "kevinrob/guzzle-cache-middleware",
-            "version": "v1.5.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Kevinrob/guzzle-cache-middleware.git",
-                "reference": "2893fff87ef9f7f2c669957f5e446beea48d7a1d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Kevinrob/guzzle-cache-middleware/zipball/2893fff87ef9f7f2c669957f5e446beea48d7a1d",
-                "reference": "2893fff87ef9f7f2c669957f5e446beea48d7a1d",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.5.0"
-            },
-            "require-dev": {
-                "cache/array-adapter": "^0.4",
-                "doctrine/cache": "^1.0",
-                "guzzlehttp/guzzle": "^6.0",
-                "illuminate/cache": "^5.0",
-                "league/flysystem": "^1.0",
-                "phpunit/phpunit": "^4.0 || ^5.0",
-                "psr/cache": "^1.0"
-            },
-            "suggest": {
-                "doctrine/cache": "This library have a lot of ready-to-use cache storage (to be use with Kevinrob\\GuzzleCache\\Storage\\DoctrineCacheStorage)",
-                "guzzlehttp/guzzle": "For using this library. It was created for Guzzle6. (but you can use it with any PSR-7 HTTP Client)",
-                "laravel/framework": "To be use with Kevinrob\\GuzzleCache\\Storage\\LaravelCacheStorage",
-                "league/flysystem": "To be use with Kevinrob\\GuzzleCache\\Storage\\FlysystemStorage",
-                "psr/cache": "To be use with Kevinrob\\GuzzleCache\\Storage\\Psr6CacheStorage"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Kevinrob\\GuzzleCache\\": [
-                        "src/",
-                        "tests/"
-                    ]
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Kevin Robatel",
-                    "email": "kevinrob2@gmail.com",
-                    "homepage": "https://github.com/Kevinrob"
-                }
-            ],
-            "description": "A HTTP/1.1 Cache for Guzzle 6. It's a simple Middleware to be added in the HandlerStack. (RFC 7234)",
-            "homepage": "https://github.com/Kevinrob/guzzle-cache-middleware",
-            "keywords": [
-                "Etag",
-                "Flysystem",
-                "Guzzle",
-                "cache",
-                "cache-control",
-                "doctrine",
-                "expiration",
-                "guzzle6",
-                "handler",
-                "http",
-                "http 1.1",
-                "middleware",
-                "performance",
-                "php",
-                "promise",
-                "psr6",
-                "psr7",
-                "rfc7234",
-                "validation"
-            ],
-            "time": "2017-01-16T07:02:13+00:00"
-        },
-        {
-            "name": "kriswallsmith/assetic",
-            "version": "v1.4.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/kriswallsmith/assetic.git",
-                "reference": "e911c437dbdf006a8f62c2f59b15b2d69a5e0aa1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/kriswallsmith/assetic/zipball/e911c437dbdf006a8f62c2f59b15b2d69a5e0aa1",
-                "reference": "e911c437dbdf006a8f62c2f59b15b2d69a5e0aa1",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.1",
-                "symfony/process": "~2.1|~3.0"
-            },
-            "conflict": {
-                "twig/twig": "<1.27"
-            },
-            "require-dev": {
-                "leafo/lessphp": "^0.3.7",
-                "leafo/scssphp": "~0.1",
-                "meenie/javascript-packer": "^1.1",
-                "mrclay/minify": "<2.3",
-                "natxet/cssmin": "3.0.4",
-                "patchwork/jsqueeze": "~1.0|~2.0",
-                "phpunit/phpunit": "~4.8 || ^5.6",
-                "psr/log": "~1.0",
-                "ptachoire/cssembed": "~1.0",
-                "symfony/phpunit-bridge": "~2.7|~3.0",
-                "twig/twig": "~1.23|~2.0",
-                "yfix/packager": "dev-master"
-=======
         },
         {
             "name": "kevinrob/guzzle-cache-middleware",
@@ -1730,7 +1330,6 @@
                 "league/flysystem": "^1.0",
                 "phpunit/phpunit": "^4.0 || ^5.0",
                 "psr/cache": "^1.0"
->>>>>>> 3.8.6
             },
             "suggest": {
                 "doctrine/cache": "This library have a lot of ready-to-use cache storage (to be use with Kevinrob\\GuzzleCache\\Storage\\DoctrineCacheStorage)",
@@ -2265,67 +1864,6 @@
             "time": "2017-09-27T21:40:39+00:00"
         },
         {
-<<<<<<< HEAD
-            "name": "php-cs-fixer/diff",
-            "version": "v1.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/PHP-CS-Fixer/diff.git",
-                "reference": "f0ef6133d674137e902fdf8a6f2e8e97e14a087b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/PHP-CS-Fixer/diff/zipball/f0ef6133d674137e902fdf8a6f2e8e97e14a087b",
-                "reference": "f0ef6133d674137e902fdf8a6f2e8e97e14a087b",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.6 || ^7.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^4.8.35 || ^5.4.3",
-                "symfony/process": "^3.3"
-            },
-            "type": "library",
-            "autoload": {
-                "classmap": [
-                    "src/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "authors": [
-                {
-                    "name": "Kore Nordmann",
-                    "email": "mail@kore-nordmann.de"
-                },
-                {
-                    "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de"
-                },
-                {
-                    "name": "SpacePossum"
-                }
-            ],
-            "description": "sebastian/diff v2 backport support for PHP5.6",
-            "homepage": "https://github.com/PHP-CS-Fixer",
-            "keywords": [
-                "diff"
-            ],
-            "time": "2017-10-19T09:58:18+00:00"
-        },
-        {
-            "name": "php-tmdb/api",
-            "version": "v2.1.10",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/php-tmdb/api.git",
-                "reference": "dc1089bc93505908cf79d8b1119ce6b71c70d7cf"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/php-tmdb/api/zipball/dc1089bc93505908cf79d8b1119ce6b71c70d7cf",
-                "reference": "dc1089bc93505908cf79d8b1119ce6b71c70d7cf",
-=======
             "name": "php-tmdb/api",
             "version": "v2.1.14",
             "source": {
@@ -2337,28 +1875,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/php-tmdb/api/zipball/2a271343f6a25499f250638fbbd0b1eb79a87e2a",
                 "reference": "2a271343f6a25499f250638fbbd0b1eb79a87e2a",
->>>>>>> 3.8.6
                 "shasum": ""
             },
             "require": {
                 "doctrine/cache": "^1.6",
                 "ext-curl": "*",
                 "guzzlehttp/guzzle": "~6.0",
-<<<<<<< HEAD
-                "kevinrob/guzzle-cache-middleware": "^1.2",
-                "php": ">=5.6.0",
-                "psr/log": "~1.0",
-                "rtheunissen/guzzle-log-middleware": "^0.4.0",
-                "symfony/event-dispatcher": ">=2.4,<4",
-                "symfony/options-resolver": ">=2.6,<4"
-=======
                 "kevinrob/guzzle-cache-middleware": "^1.2 || ^2.0",
                 "php": ">=5.6.0",
                 "psr/log": "~1.0",
                 "rtheunissen/guzzle-log-middleware": "^0.4.0",
                 "symfony/event-dispatcher": ">=2.4,<5",
                 "symfony/options-resolver": ">=2.6,<5"
->>>>>>> 3.8.6
             },
             "require-dev": {
                 "monolog/monolog": ">=1.11.0",
@@ -2401,22 +1929,6 @@
                 "tvdb",
                 "wrapper"
             ],
-<<<<<<< HEAD
-            "time": "2017-09-09T13:44:00+00:00"
-        },
-        {
-            "name": "phpmailer/phpmailer",
-            "version": "v5.2.25",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/PHPMailer/PHPMailer.git",
-                "reference": "2baf20b01690fba8cf720c1ebcf9b988eda50915"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/PHPMailer/PHPMailer/zipball/2baf20b01690fba8cf720c1ebcf9b988eda50915",
-                "reference": "2baf20b01690fba8cf720c1ebcf9b988eda50915",
-=======
             "time": "2018-01-20T18:33:44+00:00"
         },
         {
@@ -2431,7 +1943,6 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/PHPMailer/PHPMailer/zipball/70362997bda4376378be7d92d81e2200550923f7",
                 "reference": "70362997bda4376378be7d92d81e2200550923f7",
->>>>>>> 3.8.6
                 "shasum": ""
             },
             "require": {
@@ -2495,11 +2006,7 @@
                 }
             ],
             "description": "PHPMailer is a full-featured email creation and transfer class for PHP",
-<<<<<<< HEAD
-            "time": "2017-08-28T11:12:07+00:00"
-=======
             "time": "2017-11-04T09:26:05+00:00"
->>>>>>> 3.8.6
         },
         {
             "name": "pklauzinski/jscroll",
@@ -2703,18 +2210,6 @@
         },
         {
             "name": "react/dns",
-<<<<<<< HEAD
-            "version": "v0.4.11",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/reactphp/dns.git",
-                "reference": "8558bba4f2784aa997670d15fc6f7461a8eb4e53"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/reactphp/dns/zipball/8558bba4f2784aa997670d15fc6f7461a8eb4e53",
-                "reference": "8558bba4f2784aa997670d15fc6f7461a8eb4e53",
-=======
             "version": "v0.4.13",
             "source": {
                 "type": "git",
@@ -2725,7 +2220,6 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/reactphp/dns/zipball/7d1e08c300fd7de600810883386ee5e2a64898f4",
                 "reference": "7d1e08c300fd7de600810883386ee5e2a64898f4",
->>>>>>> 3.8.6
                 "shasum": ""
             },
             "require": {
@@ -2734,19 +2228,11 @@
                 "react/event-loop": "^1.0 || ^0.5 || ^0.4 || ^0.3.5",
                 "react/promise": "^2.1 || ^1.2.1",
                 "react/promise-timer": "^1.2",
-<<<<<<< HEAD
-                "react/socket": "^1.0 || ^0.8 || ^0.7 || ^0.6 || ^0.5 || ^0.4.4",
-=======
->>>>>>> 3.8.6
                 "react/stream": "^1.0 || ^0.7 || ^0.6 || ^0.5 || ^0.4.5"
             },
             "require-dev": {
                 "clue/block-react": "^1.2",
-<<<<<<< HEAD
-                "phpunit/phpunit": "^5.0 || ^4.8.10"
-=======
                 "phpunit/phpunit": "^6.4 || ^5.7 || ^4.8.35"
->>>>>>> 3.8.6
             },
             "type": "library",
             "autoload": {
@@ -2765,11 +2251,7 @@
                 "dns-resolver",
                 "reactphp"
             ],
-<<<<<<< HEAD
-            "time": "2017-08-25T08:22:48+00:00"
-=======
             "time": "2018-02-27T12:51:22+00:00"
->>>>>>> 3.8.6
         },
         {
             "name": "react/event-loop",
@@ -2944,18 +2426,6 @@
         },
         {
             "name": "react/promise-timer",
-<<<<<<< HEAD
-            "version": "v1.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/reactphp/promise-timer.git",
-                "reference": "3bc527fbd1201a193ab41c19b9a770d71a3514af"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/reactphp/promise-timer/zipball/3bc527fbd1201a193ab41c19b9a770d71a3514af",
-                "reference": "3bc527fbd1201a193ab41c19b9a770d71a3514af",
-=======
             "version": "v1.2.1",
             "source": {
                 "type": "git",
@@ -2966,7 +2436,6 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/reactphp/promise-timer/zipball/9b4cd9cbe7457e0d87fe8aa7ccceab8a2c830fbd",
                 "reference": "9b4cd9cbe7457e0d87fe8aa7ccceab8a2c830fbd",
->>>>>>> 3.8.6
                 "shasum": ""
             },
             "require": {
@@ -2975,11 +2444,7 @@
                 "react/promise": "~2.1|~1.2"
             },
             "require-dev": {
-<<<<<<< HEAD
-                "phpunit/phpunit": "^5.0 || ^4.8"
-=======
                 "phpunit/phpunit": "^6.4 || ^5.7 || ^4.8.35"
->>>>>>> 3.8.6
             },
             "type": "library",
             "autoload": {
@@ -3000,11 +2465,7 @@
                     "email": "christian@lueck.tv"
                 }
             ],
-<<<<<<< HEAD
-            "description": "Trivial timeout implementation for Promises",
-=======
             "description": "A trivial implementation of timeouts for Promises, built on top of ReactPHP.",
->>>>>>> 3.8.6
             "homepage": "https://github.com/react/promise-timer",
             "keywords": [
                 "async",
@@ -3014,11 +2475,7 @@
                 "timeout",
                 "timer"
             ],
-<<<<<<< HEAD
-            "time": "2017-08-08T16:30:19+00:00"
-=======
             "time": "2017-12-22T15:41:41+00:00"
->>>>>>> 3.8.6
         },
         {
             "name": "react/react",
@@ -3199,22 +2656,6 @@
                 "pipe",
                 "stream"
             ],
-<<<<<<< HEAD
-            "time": "2016-12-06T10:54:49+00:00"
-        },
-        {
-            "name": "react/stream",
-            "version": "v0.4.6",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/reactphp/stream.git",
-                "reference": "44dc7f51ea48624110136b535b9ba44fd7d0c1ee"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/reactphp/stream/zipball/44dc7f51ea48624110136b535b9ba44fd7d0c1ee",
-                "reference": "44dc7f51ea48624110136b535b9ba44fd7d0c1ee",
-=======
             "time": "2017-01-25T14:44:14+00:00"
         },
         {
@@ -3229,35 +2670,24 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/ringcentral/psr7/zipball/dcd84bbb49b96c616d1dcc8bfb9bef3f2cd53d1c",
                 "reference": "dcd84bbb49b96c616d1dcc8bfb9bef3f2cd53d1c",
->>>>>>> 3.8.6
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3",
                 "psr/http-message": "~1.0"
             },
-<<<<<<< HEAD
-            "require-dev": {
-                "clue/stream-filter": "~1.2",
-                "react/event-loop": "^0.4|^0.3",
-                "react/promise": "^2.0|^1.0"
-=======
             "provide": {
                 "psr/http-message-implementation": "1.0"
->>>>>>> 3.8.6
             },
             "require-dev": {
                 "phpunit/phpunit": "~4.0"
             },
             "type": "library",
-<<<<<<< HEAD
-=======
             "extra": {
                 "branch-alias": {
                     "dev-master": "1.0-dev"
                 }
             },
->>>>>>> 3.8.6
             "autoload": {
                 "psr-4": {
                     "RingCentral\\Psr7\\": "src/"
@@ -3284,11 +2714,7 @@
                 "stream",
                 "uri"
             ],
-<<<<<<< HEAD
-            "time": "2017-01-25T14:44:14+00:00"
-=======
             "time": "2018-01-15T21:00:49+00:00"
->>>>>>> 3.8.6
         },
         {
             "name": "ringcentral/psr7",
@@ -3508,18 +2934,6 @@
         },
         {
             "name": "rtheunissen/guzzle-log-middleware",
-<<<<<<< HEAD
-            "version": "v0.4.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/rtheunissen/guzzle-log-middleware.git",
-                "reference": "7b6f2884b623091e58276500f38499f238d7d4e2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/rtheunissen/guzzle-log-middleware/zipball/7b6f2884b623091e58276500f38499f238d7d4e2",
-                "reference": "7b6f2884b623091e58276500f38499f238d7d4e2",
-=======
             "version": "v0.4.1",
             "source": {
                 "type": "git",
@@ -3530,7 +2944,6 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/rtheunissen/guzzle-log-middleware/zipball/202f474456e5b4a62c09a91054b3942cab48ad74",
                 "reference": "202f474456e5b4a62c09a91054b3942cab48ad74",
->>>>>>> 3.8.6
                 "shasum": ""
             },
             "require": {
@@ -3548,12 +2961,7 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-<<<<<<< HEAD
-                    "Concat\\Http\\Middleware\\": "src/",
-                    "Concat\\Http\\Middleware\\Test\\": "tests/"
-=======
                     "Concat\\Http\\Middleware\\": "src/"
->>>>>>> 3.8.6
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -3574,11 +2982,7 @@
                 "middleware",
                 "psr7"
             ],
-<<<<<<< HEAD
-            "time": "2015-06-16T06:35:18+00:00"
-=======
             "time": "2017-11-06T19:17:52+00:00"
->>>>>>> 3.8.6
         },
         {
             "name": "sabre/dav",
@@ -3722,18 +3126,6 @@
         },
         {
             "name": "sabre/http",
-<<<<<<< HEAD
-            "version": "4.2.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/sabre-io/http.git",
-                "reference": "0295f9a3ee39be97e0898592fc19e42421e0cd93"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/sabre-io/http/zipball/0295f9a3ee39be97e0898592fc19e42421e0cd93",
-                "reference": "0295f9a3ee39be97e0898592fc19e42421e0cd93",
-=======
             "version": "v4.2.4",
             "source": {
                 "type": "git",
@@ -3744,7 +3136,6 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/sabre-io/http/zipball/acccec4ba863959b2d10c1fa0fb902736c5c8956",
                 "reference": "acccec4ba863959b2d10c1fa0fb902736c5c8956",
->>>>>>> 3.8.6
                 "shasum": ""
             },
             "require": {
@@ -3787,11 +3178,7 @@
             "keywords": [
                 "http"
             ],
-<<<<<<< HEAD
-            "time": "2017-06-12T07:53:04+00:00"
-=======
             "time": "2018-02-23T11:10:29+00:00"
->>>>>>> 3.8.6
         },
         {
             "name": "sabre/uri",
@@ -3846,18 +3233,6 @@
         },
         {
             "name": "sabre/vobject",
-<<<<<<< HEAD
-            "version": "4.1.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/sabre-io/vobject.git",
-                "reference": "d0fde2fafa2a3dad1f559c2d1c2591d4fd75ae3c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/sabre-io/vobject/zipball/d0fde2fafa2a3dad1f559c2d1c2591d4fd75ae3c",
-                "reference": "d0fde2fafa2a3dad1f559c2d1c2591d4fd75ae3c",
-=======
             "version": "4.1.4",
             "source": {
                 "type": "git",
@@ -3868,7 +3243,6 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/sabre-io/vobject/zipball/6484b9d660822c5e221c76122ce8ea658ecc9c5b",
                 "reference": "6484b9d660822c5e221c76122ce8ea658ecc9c5b",
->>>>>>> 3.8.6
                 "shasum": ""
             },
             "require": {
@@ -3877,11 +3251,7 @@
                 "sabre/xml": ">=1.5 <3.0"
             },
             "require-dev": {
-<<<<<<< HEAD
-                "phpunit/phpunit": "*",
-=======
                 "phpunit/phpunit": "> 4.8.35, <6.0.0",
->>>>>>> 3.8.6
                 "sabre/cs": "^1.0.0"
             },
             "suggest": {
@@ -3956,11 +3326,7 @@
                 "xCal",
                 "xCard"
             ],
-<<<<<<< HEAD
-            "time": "2016-12-06T04:14:09+00:00"
-=======
             "time": "2017-12-22T14:16:56+00:00"
->>>>>>> 3.8.6
         },
         {
             "name": "sabre/xml",
@@ -4129,25 +3495,6 @@
             }
         },
         {
-<<<<<<< HEAD
-            "name": "symfony/console",
-            "version": "v3.3.10",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/console.git",
-                "reference": "116bc56e45a8e5572e51eb43ab58c769a352366c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/116bc56e45a8e5572e51eb43ab58c769a352366c",
-                "reference": "116bc56e45a8e5572e51eb43ab58c769a352366c",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.5.9|>=7.0.8",
-                "symfony/debug": "~2.8|~3.0",
-                "symfony/polyfill-mbstring": "~1.0"
-=======
             "name": "symfony/event-dispatcher",
             "version": "v3.4.4",
             "source": {
@@ -4163,25 +3510,16 @@
             },
             "require": {
                 "php": "^5.5.9|>=7.0.8"
->>>>>>> 3.8.6
             },
             "conflict": {
                 "symfony/dependency-injection": "<3.3"
             },
             "require-dev": {
                 "psr/log": "~1.0",
-<<<<<<< HEAD
-                "symfony/config": "~3.3",
-                "symfony/dependency-injection": "~3.3",
-                "symfony/event-dispatcher": "~2.8|~3.0",
-                "symfony/filesystem": "~2.8|~3.0",
-                "symfony/process": "~2.8|~3.0"
-=======
                 "symfony/config": "~2.8|~3.0|~4.0",
                 "symfony/dependency-injection": "~3.3|~4.0",
                 "symfony/expression-language": "~2.8|~3.0|~4.0",
                 "symfony/stopwatch": "~2.8|~3.0|~4.0"
->>>>>>> 3.8.6
             },
             "suggest": {
                 "psr/log": "For using the console logger",
@@ -4192,11 +3530,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-<<<<<<< HEAD
-                    "dev-master": "3.3-dev"
-=======
                     "dev-master": "3.4-dev"
->>>>>>> 3.8.6
                 }
             },
             "autoload": {
@@ -4223,22 +3557,6 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
-            "time": "2017-10-02T06:42:24+00:00"
-        },
-        {
-            "name": "symfony/debug",
-            "version": "v3.3.10",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/debug.git",
-                "reference": "eb95d9ce8f18dcc1b3dfff00cb624c402be78ffd"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/debug/zipball/eb95d9ce8f18dcc1b3dfff00cb624c402be78ffd",
-                "reference": "eb95d9ce8f18dcc1b3dfff00cb624c402be78ffd",
-=======
             "time": "2018-01-03T07:37:34+00:00"
         },
         {
@@ -4253,35 +3571,20 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/http-foundation/zipball/8c39071ac9cc7e6d8dab1d556c990dc0d2cc3d30",
                 "reference": "8c39071ac9cc7e6d8dab1d556c990dc0d2cc3d30",
->>>>>>> 3.8.6
                 "shasum": ""
             },
             "require": {
                 "php": "^5.5.9|>=7.0.8",
-<<<<<<< HEAD
-                "psr/log": "~1.0"
-            },
-            "conflict": {
-                "symfony/http-kernel": ">=2.3,<2.3.24|~2.4.0|>=2.5,<2.5.9|>=2.6,<2.6.2"
-            },
-            "require-dev": {
-                "symfony/http-kernel": "~2.8|~3.0"
-=======
                 "symfony/polyfill-mbstring": "~1.1",
                 "symfony/polyfill-php70": "~1.6"
             },
             "require-dev": {
                 "symfony/expression-language": "~2.8|~3.0|~4.0"
->>>>>>> 3.8.6
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-<<<<<<< HEAD
-                    "dev-master": "3.3-dev"
-=======
                     "dev-master": "3.4-dev"
->>>>>>> 3.8.6
                 }
             },
             "autoload": {
@@ -4308,22 +3611,6 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
-            "time": "2017-10-02T06:42:24+00:00"
-        },
-        {
-            "name": "symfony/event-dispatcher",
-            "version": "v3.3.10",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/event-dispatcher.git",
-                "reference": "d7ba037e4b8221956ab1e221c73c9e27e05dd423"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/d7ba037e4b8221956ab1e221c73c9e27e05dd423",
-                "reference": "d7ba037e4b8221956ab1e221c73c9e27e05dd423",
-=======
             "time": "2018-01-29T09:03:43+00:00"
         },
         {
@@ -4338,37 +3625,15 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/options-resolver/zipball/f3109a6aedd20e35c3a33190e932c2b063b7b50e",
                 "reference": "f3109a6aedd20e35c3a33190e932c2b063b7b50e",
->>>>>>> 3.8.6
                 "shasum": ""
             },
             "require": {
                 "php": "^5.5.9|>=7.0.8"
-<<<<<<< HEAD
-            },
-            "conflict": {
-                "symfony/dependency-injection": "<3.3"
-            },
-            "require-dev": {
-                "psr/log": "~1.0",
-                "symfony/config": "~2.8|~3.0",
-                "symfony/dependency-injection": "~3.3",
-                "symfony/expression-language": "~2.8|~3.0",
-                "symfony/stopwatch": "~2.8|~3.0"
-            },
-            "suggest": {
-                "symfony/dependency-injection": "",
-                "symfony/http-kernel": ""
-=======
->>>>>>> 3.8.6
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-<<<<<<< HEAD
-                    "dev-master": "3.3-dev"
-=======
                     "dev-master": "3.4-dev"
->>>>>>> 3.8.6
                 }
             },
             "autoload": {
@@ -4395,22 +3660,6 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
-            "time": "2017-10-02T06:42:24+00:00"
-        },
-        {
-            "name": "symfony/filesystem",
-            "version": "v3.3.10",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/filesystem.git",
-                "reference": "90bc45abf02ae6b7deb43895c1052cb0038506f1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/filesystem/zipball/90bc45abf02ae6b7deb43895c1052cb0038506f1",
-                "reference": "90bc45abf02ae6b7deb43895c1052cb0038506f1",
-=======
             "keywords": [
                 "config",
                 "configuration",
@@ -4548,7 +3797,6 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/process/zipball/09a5172057be8fc677840e591b17f385e58c7c0d",
                 "reference": "09a5172057be8fc677840e591b17f385e58c7c0d",
->>>>>>> 3.8.6
                 "shasum": ""
             },
             "require": {
@@ -4557,11 +3805,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-<<<<<<< HEAD
-                    "dev-master": "3.3-dev"
-=======
                     "dev-master": "3.4-dev"
->>>>>>> 3.8.6
                 }
             },
             "autoload": {
@@ -4588,22 +3832,6 @@
             ],
             "description": "Symfony Filesystem Component",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
-            "time": "2017-10-03T13:33:10+00:00"
-        },
-        {
-            "name": "symfony/finder",
-            "version": "v3.3.10",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/finder.git",
-                "reference": "773e19a491d97926f236942484cb541560ce862d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/finder/zipball/773e19a491d97926f236942484cb541560ce862d",
-                "reference": "773e19a491d97926f236942484cb541560ce862d",
-=======
             "time": "2018-01-29T09:03:43+00:00"
         },
         {
@@ -4618,13 +3846,10 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/routing/zipball/235d01730d553a97732990588407eaf6779bb4b2",
                 "reference": "235d01730d553a97732990588407eaf6779bb4b2",
->>>>>>> 3.8.6
                 "shasum": ""
             },
             "require": {
                 "php": "^5.5.9|>=7.0.8"
-<<<<<<< HEAD
-=======
             },
             "conflict": {
                 "symfony/config": "<2.8",
@@ -4648,16 +3873,11 @@
                 "symfony/expression-language": "For using expression matching",
                 "symfony/http-foundation": "For using a Symfony Request object",
                 "symfony/yaml": "For using the YAML loader"
->>>>>>> 3.8.6
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-<<<<<<< HEAD
-                    "dev-master": "3.3-dev"
-=======
                     "dev-master": "3.4-dev"
->>>>>>> 3.8.6
                 }
             },
             "autoload": {
@@ -4684,30 +3904,6 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
-            "time": "2017-10-02T06:42:24+00:00"
-        },
-        {
-            "name": "symfony/http-foundation",
-            "version": "v3.3.10",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/http-foundation.git",
-                "reference": "22cf9c2b1d9f67cc8e75ae7f4eaa60e4c1eff1f8"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/22cf9c2b1d9f67cc8e75ae7f4eaa60e4c1eff1f8",
-                "reference": "22cf9c2b1d9f67cc8e75ae7f4eaa60e4c1eff1f8",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.5.9|>=7.0.8",
-                "symfony/polyfill-mbstring": "~1.1"
-            },
-            "require-dev": {
-                "symfony/expression-language": "~2.8|~3.0"
-=======
             "keywords": [
                 "router",
                 "routing",
@@ -4738,7 +3934,6 @@
                 "codeception/codeception": "^2.3",
                 "phpunit/phpunit": "^4.8|6.1",
                 "squizlabs/php_codesniffer": "^2.8|3.0"
->>>>>>> 3.8.6
             },
             "type": "library",
             "extra": {
@@ -5237,11 +4432,7 @@
                 "pchart",
                 "statistics"
             ],
-<<<<<<< HEAD
-            "time": "2017-08-21T20:29:42+00:00"
-=======
             "time": "2017-11-25T22:19:20+00:00"
->>>>>>> 3.8.6
         },
         {
             "name": "tightenco/collect",
@@ -5292,18 +4483,6 @@
         },
         {
             "name": "vakata/jstree",
-<<<<<<< HEAD
-            "version": "3.3.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/vakata/jstree.git",
-                "reference": "a6a0d0dfb784d5ef0b3415d847ac7b6bfbab1f16"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/vakata/jstree/zipball/a6a0d0dfb784d5ef0b3415d847ac7b6bfbab1f16",
-                "reference": "a6a0d0dfb784d5ef0b3415d847ac7b6bfbab1f16",
-=======
             "version": "3.3.5",
             "source": {
                 "type": "git",
@@ -5314,7 +4493,6 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/vakata/jstree/zipball/0097fab41981daf36c234b73b683166daabd5f28",
                 "reference": "0097fab41981daf36c234b73b683166daabd5f28",
->>>>>>> 3.8.6
                 "shasum": ""
             },
             "require": {
@@ -5358,11 +4536,7 @@
             ],
             "description": "jsTree is jquery plugin, that provides interactive trees.",
             "homepage": "http://jstree.com",
-<<<<<<< HEAD
-            "time": "2017-04-06T14:23:09+00:00"
-=======
             "time": "2018-01-02T08:13:23+00:00"
->>>>>>> 3.8.6
         },
         {
             "name": "wikimedia/composer-merge-plugin",
