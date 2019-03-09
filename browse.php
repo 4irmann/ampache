@@ -77,7 +77,7 @@ switch ($_REQUEST['action']) {
         if (AmpConfig::get('catalog_disable')) {
             $browse->set_filter('catalog_enabled', '1');
         }
-        $browse->set_sort('name', 'ASC');
+        $browse->set_sort('year','DESC');
         $browse->update_browse_from_session();  // Update current index depending on what is in session.
         $browse->show_objects();
     break;
@@ -114,7 +114,7 @@ switch ($_REQUEST['action']) {
         if (AmpConfig::get('catalog_disable')) {
             $browse->set_filter('catalog_enabled', '1');
         }
-        $browse->set_sort('title', 'ASC');
+        $browse->set_sort('title', 'DESC');
         $browse->update_browse_from_session();
         $browse->show_objects();
     break;

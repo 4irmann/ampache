@@ -116,7 +116,7 @@ switch ($_REQUEST['action']) {
             $matchlist['catalog'] = $_REQUEST['catalog'];
         }
         /* Setup the options array */
-        $options   = array('limit' => $_REQUEST['random'], 'random_type' => $_REQUEST['random_type'],'size_limit'=>$_REQUEST['size_limit']);
+        $options   = array('limit' => $_REQUEST['random'], 'random_type' => $_REQUEST['random_type'],'size_limit' => $_REQUEST['size_limit']);
         $media_ids = get_random_songs($options, $matchlist);
     break;
     case 'democratic':
@@ -186,7 +186,7 @@ if (count($media_ids) || isset($urls)) {
         $playlist->add_urls($urls);
     }
     // Depending on the stream type, will either generate a redirect or actually do the streaming.
-    $playlist->generate_playlist($stream_type, true);
+    $playlist->generate_playlist($stream_type, false);
 } else {
     debug_event('stream.php', 'No item. Ignoring...', 5);
 }

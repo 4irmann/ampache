@@ -70,11 +70,12 @@ class Subsonic_Api
         if ($encpwd !== false) {
             $hex    = substr($password, 4);
             $decpwd = '';
-            for ($i=0; $i<strlen($hex); $i+=2) {
+            for ($i=0; $i < strlen($hex); $i += 2) {
                 $decpwd .= chr(hexdec(substr($hex, $i, 2)));
             }
             $password = $decpwd;
         }
+
         return $password;
     }
 
@@ -100,6 +101,7 @@ class Subsonic_Api
                 http_response_code(curl_getinfo($ch, CURLINFO_HTTP_CODE));
             }
         }
+
         return strlen($header);
     }
 
@@ -201,9 +203,9 @@ class Subsonic_Api
     private static function xml2json($xml, $options = array())
     {
         $defaults = array(
-            'namespaceSeparator' => ':',//you may want this to be something other than a colon
+            'namespaceSeparator' => ' :',//you may want this to be something other than a colon
             'attributePrefix' => '',   //to distinguish between attributes and nodes with the same name
-            'alwaysArray' => array(),   //array of xml tag names which should always become arrays
+            'alwaysArray' => array('musicFolder', 'artist', 'child', 'playlist', 'song', 'album'),   //array of xml tag names which should always become arrays
             'autoArray' => true,        //only create arrays for tags which appear more than once
             'textContent' => 'value',       //key used for the text content of elements
             'autoText' => true,         //skip textContent key if node has no attributes or child nodes
@@ -257,10 +259,18 @@ class Subsonic_Api
 
                 if (!isset($tagsArray[$childTagName])) {
                     //only entry with this key
+                    
+                    if (count($childProperties) == 0) {
+                        $tagsArray[$childTagName] = (object) $childProperties;
+                    } elseif (self::has_Nested_Array($childProperties)) {
+                        $tagsArray[$childTagName] = (object) $childProperties;
+                    } else {
+                        
                     //test if tags of this type should always be arrays, no matter the element count
-                    $tagsArray[$childTagName] =
+                        $tagsArray[$childTagName] =
                             in_array($childTagName, $options['alwaysArray']) || !$options['autoArray']
                             ? array($childProperties) : $childProperties;
+                    }
                 } elseif (
                     is_array($tagsArray[$childTagName]) && array_keys($tagsArray[$childTagName])
                     === range(0, count($tagsArray[$childTagName]) - 1)
@@ -276,7 +286,7 @@ class Subsonic_Api
 
         //get text content of node
         $textContentArray = array();
-        $plainText        = trim((string) $xml);
+        $plainText        = (string) $xml;
         if ($plainText !== '') {
             $textContentArray[$options['textContent']] = $plainText;
         }
@@ -288,12 +298,23 @@ class Subsonic_Api
         if (isset($propertiesArray['xmlns'])) {
             unset($propertiesArray['xmlns']);
         }
+        
         //return node as array
         return array(
             $xml->getName() => $propertiesArray
         );
     }
 
+    private static function has_Nested_Array($properties)
+    {
+        foreach ($properties as $property) {
+            if (is_array($property)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
 
     /**
      * ping
@@ -326,94 +347,94 @@ class Subsonic_Api
      * Get all configured top-level music folders (= ampache catalogs).
      * Takes no parameter.
      */
-     public static function getmusicfolders($input)
-     {
-         self::check_version($input);
+    public static function getmusicfolders($input)
+    {
+        self::check_version($input);
 
-         $r = Subsonic_XML_Data::createSuccessResponse();
-         Subsonic_XML_Data::addMusicFolders($r, Catalog::get_catalogs());
-         self::apiOutput($input, $r);
-     }
+        $r = Subsonic_XML_Data::createSuccessResponse();
+        Subsonic_XML_Data::addMusicFolders($r, Catalog::get_catalogs());
+        self::apiOutput($input, $r);
+    }
 
     /**
      * getIndexes
      * Get an indexed structure of all artists.
      * Takes optional musicFolderId and optional ifModifiedSince in parameters.
      */
-     public static function getindexes($input)
-     {
-         self::check_version($input);
-         set_time_limit(300);
+    public static function getindexes($input)
+    {
+        self::check_version($input);
+        set_time_limit(300);
 
-         $musicFolderId   = $input['musicFolderId'];
-         $ifModifiedSince = $input['ifModifiedSince'];
+        $musicFolderId   = $input['musicFolderId'];
+        $ifModifiedSince = $input['ifModifiedSince'];
 
-         $catalogs = array();
-         if (!empty($musicFolderId) && $musicFolderId != '-1') {
-             $catalogs[] = $musicFolderId;
-         } else {
-             $catalogs = Catalog::get_catalogs();
-         }
+        $catalogs = array();
+        if (!empty($musicFolderId) && $musicFolderId != '-1') {
+            $catalogs[] = $musicFolderId;
+        } else {
+            $catalogs = Catalog::get_catalogs();
+        }
 
-         $lastmodified = 0;
-         $fcatalogs    = array();
+        $lastmodified = 0;
+        $fcatalogs    = array();
 
-         foreach ($catalogs as $id) {
-             $clastmodified = 0;
-             $catalog       = Catalog::create_from_id($id);
+        foreach ($catalogs as $id) {
+            $clastmodified = 0;
+            $catalog       = Catalog::create_from_id($id);
 
-             if ($catalog->last_update > $clastmodified) {
-                 $clastmodified = $catalog->last_update;
-             }
-             if ($catalog->last_add > $clastmodified) {
-                 $clastmodified = $catalog->last_add;
-             }
-             if ($catalog->last_clean > $clastmodified) {
-                 $clastmodified = $catalog->last_clean;
-             }
+            if ($catalog->last_update > $clastmodified) {
+                $clastmodified = $catalog->last_update;
+            }
+            if ($catalog->last_add > $clastmodified) {
+                $clastmodified = $catalog->last_add;
+            }
+            if ($catalog->last_clean > $clastmodified) {
+                $clastmodified = $catalog->last_clean;
+            }
 
-             if ($clastmodified > $lastmodified) {
-                 $lastmodified = $clastmodified;
-             }
-             if (!empty($ifModifiedSince) && $clastmodified > ($ifModifiedSince / 1000)) {
-                 $fcatalogs[] = $id;
-             }
-         }
-         if (empty($ifModifiedSince)) {
-             $fcatalogs = $catalogs;
-         }
+            if ($clastmodified > $lastmodified) {
+                $lastmodified = $clastmodified;
+            }
+            if (!empty($ifModifiedSince) && $clastmodified > ($ifModifiedSince / 1000)) {
+                $fcatalogs[] = $id;
+            }
+        }
+        if (empty($ifModifiedSince)) {
+            $fcatalogs = $catalogs;
+        }
 
-         $r = Subsonic_XML_Data::createSuccessResponse();
-         if (count($fcatalogs) > 0) {
-             $artists = Catalog::get_artists($fcatalogs);
-             Subsonic_XML_Data::addArtistsIndexes($r, $artists, $lastmodified);
-         }
-         self::apiOutput($input, $r);
-     }
+        $r = Subsonic_XML_Data::createSuccessResponse();
+        if (count($fcatalogs) > 0) {
+            $artists = Catalog::get_artists($fcatalogs);
+            Subsonic_XML_Data::addArtistsIndexes($r, $artists, $lastmodified);
+        }
+        self::apiOutput($input, $r);
+    }
 
     /**
      * getMusicDirectory
      * Get a list of all files in a music directory.
      * Takes the directory id in parameters.
      */
-     public static function getmusicdirectory($input)
-     {
-         self::check_version($input);
+    public static function getmusicdirectory($input)
+    {
+        self::check_version($input);
 
-         $id = self::check_parameter($input, 'id');
+        $id = self::check_parameter($input, 'id');
 
-         $r = Subsonic_XML_Data::createSuccessResponse();
-         if (Subsonic_XML_Data::isArtist($id)) {
-             $artist = new Artist(Subsonic_XML_Data::getAmpacheId($id));
-             Subsonic_XML_Data::addArtistDirectory($r, $artist);
-         } else {
-             if (Subsonic_XML_Data::isAlbum($id)) {
-                 $album = new Album(Subsonic_XML_Data::getAmpacheId($id));
-                 Subsonic_XML_Data::addAlbumDirectory($r, $album);
-             }
-         }
-         self::apiOutput($input, $r);
-     }
+        $r = Subsonic_XML_Data::createSuccessResponse();
+        if (Subsonic_XML_Data::isArtist($id)) {
+            $artist = new Artist(Subsonic_XML_Data::getAmpacheId($id));
+            Subsonic_XML_Data::addArtistDirectory($r, $artist);
+        } else {
+            if (Subsonic_XML_Data::isAlbum($id)) {
+                $album = new Album(Subsonic_XML_Data::getAmpacheId($id));
+                Subsonic_XML_Data::addAlbumDirectory($r, $album);
+            }
+        }
+        self::apiOutput($input, $r);
+    }
 
     /**
      * getGenres
@@ -503,6 +524,7 @@ class Subsonic_Api
         Subsonic_XML_Data::addVideos($r, $videos);
         self::apiOutput($input, $r);
     }
+    
 
     /**
      * getAlbumList
@@ -547,7 +569,7 @@ class Subsonic_Api
                             $albums = Stats::get_recent("album", $size, $offset);
                         } else {
                             if ($type == "starred") {
-                                $albums = Userflag::get_latest('album');
+                                $albums = Userflag::get_latest('album', null, $size);
                             } else {
                                 if ($type == "alphabeticalByName") {
                                     $albums = Catalog::get_albums($size, $offset, $catalogs);
@@ -1124,6 +1146,7 @@ class Subsonic_Api
                     header('Content-type: ' . $thumb['thumb_mime']);
                     header('Content-Length: ' . strlen($thumb['thumb']));
                     echo $thumb['thumb'];
+
                     return;
                 }
             }
@@ -2097,7 +2120,7 @@ class Subsonic_Api
                 $bookmark->update($position);
             } else {
                 Bookmark::create(array(
-                    'object_id' =>  Subsonic_XML_Data::getAmpacheId($id),
+                    'object_id' => Subsonic_XML_Data::getAmpacheId($id),
                     'object_type' => $type,
                     'comment' => $comment,
                     'position' => $position

@@ -1,3 +1,5 @@
+/header.inc.php
+/.htaccess
 /config/ampache.cfg.php
 /config/ampache-doped.cfg.php
 /rest/.htaccess

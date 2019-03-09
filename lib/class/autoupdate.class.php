@@ -83,11 +83,14 @@ class AutoUpdate
             // Not connected / API rate limit exceeded: just ignore, it will pass next time
             if ($request->status_code != 200) {
                 debug_event('autoupdate', 'Github API request ' . $url . ' failed with http code ' . $request->status_code, '1');
+
                 return null;
             }
+
             return json_decode($request->body);
         } catch (Exception $e) {
             debug_event('autoupdate', 'Request error: ' . $e->getMessage(), '1');
+
             return null;
         }
     }
@@ -231,7 +234,13 @@ class AutoUpdate
         echo ' (' . self::get_latest_version() . ').<br />';
 
         echo T_('See') . ' <a href="https://github.com/ampache/ampache/' . (self::is_develop() ? 'compare/' . self::get_current_version() . '...' . self::get_latest_version() : 'blob/master/docs/CHANGELOG.md') . '" target="_blank">' . T_('changes') . '</a> ';
-        echo T_('or') . ' <a href="https://github.com/ampache/ampache/archive/' . (self::is_develop() ? 'develop.zip' : self::get_latest_version() . '.zip') . '" target="_blank"><b>' . T_('download') . '</b></a>.';
+        if (self::is_develop()) {
+            echo T_('or') . ' <a href="https://github.com/ampache/ampache/archive/' .
+             (self::is_develop() ? 'develop.zip' : self::get_latest_version() . '.zip') . '" target="_blank"><b>' . T_('download') . '</b></a>.';
+        } else {
+            echo T_('or') . ' <a href="https://github.com/ampache/ampache/releases/download/' . self::get_latest_version() .
+              '/ampache-' . self::get_latest_version() . '_all.zip"' . ' target="_blank"><b>' . T_('download') . '</b></a>.';
+        }
         if (self::is_git_repository()) {
             echo ' | <a rel="nohtml" href="' . AmpConfig::get('web_path') . '/update.php?type=sources&action=update">.:: Update ::.</a>';
         }
