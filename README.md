@@ -1,51 +1,24 @@
- ![Logo](http://ampache.org/img/logo/ampache-logo_x64.png) Ampache
+ ![Logo](http://ampache.org/img/logo/ampache-logo_x64.png) Ampache Sermon Edition
 =======
-[www.ampache.org](http://ampache.org/) |
-[ampache.github.io](http://ampache.github.io)
+## Sermon Edition (German only!)
 
-Basics
-------
+The **Ampache Sermon Edition** is a slightly modified version of the original Ampache  web media player. It is meant to be a special media player for playback of publicly available sermons, which are usually recorded during christian sunday morning services. For that purpose some Ampache  features were modified: 
 
-Ampache is a web based audio/video streaming application and file
-manager allowing you to access your music & videos from anywhere,
-using almost any internet enabled device.
+1. main goal was to have a slick and less cluttered UI for the anonymous user who just wants to listen to a sermon or download a sermon as MP3 file. Less is more !
+2. the German translation files were customized so that the wording fits to the "sermon" context. E.g. the word "**song**" was replaced by the german word "**Predigt**". And the word "**artist**" was replaced by the german word "**Prediger**" and so on.
+3. Sermons are publicly available. So a lot of Ampache features which are related to user login were deactivated or removed (e.g. via specific `ampache.cfg.php ` and/or modification of some php files). Also social network integration and external music catalogues (e.g. lastfm)  were disabled.
 
-Ampache's usefulness is heavily dependent on being able to extract
-correct metadata from embedded tags in your files and/or the file name.
-Ampache is not a media organiser; it is meant to be a tool which
-presents an already organised collection in a useful way. It assumes
-that you know best how to manage your files and are capable of
-choosing a suitable method for doing so.
-
-Recommended Version
--------------------
-
-The recommended and most stable version is [git HEAD](https://github.com/ampache/ampache/archive/master.tar.gz).
-[![Build Status](https://api.travis-ci.org/ampache/ampache.png?branch=master)](https://travis-ci.org/ampache/ampache)
-
-You get the latest version with recent changes and fixes but maybe in an unstable state from our [develop branch](https://github.com/ampache/ampache/archive/develop.tar.gz).
-[![Build Status](https://api.travis-ci.org/ampache/ampache.png?branch=develop)](https://travis-ci.org/ampache/ampache)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/ampache/ampache/badges/quality-score.png?b=develop)](https://scrutinizer-ci.com/g/ampache/ampache/?branch=develop)
-[![Codacy Badge](https://api.codacy.com/project/badge/b28cdb9e9ee2431c7cb9c23d5438cb80)](https://www.codacy.com/app/afterster_2222/ampache)
-[![Code Climate](https://codeclimate.com/github/ampache/ampache/badges/gpa.svg)](https://codeclimate.com/github/ampache/ampache)
-
-Installation
-------------
-
-Please see [the wiki](https://github.com/ampache/ampache/wiki/Installation)
+For original Ampache documentation have a look at: [www.ampache.org](http://ampache.org/) | [ampache.github.io](http://ampache.github.io)
 
 Requirements
 ------------
 
-* A web server. All of the following have been used, though Apache
-receives the most testing:
+* A web server. All of the following have been used, though Apache receives the most testing:
     * Apache
     * lighttpd
     * nginx
     * IIS
-
 * PHP 5.4 or greater.
-
 * PHP modules:
     * PDO
     * PDO_MYSQL
@@ -54,60 +27,189 @@ receives the most testing:
     * json
     * simplexml (optional)
     * curl (optional)
-
 * MySQL 5.x
 
-Upgrading
----------
+## Installation from scratch via git cloning 
 
-If you are upgrading from an older version of Ampache we recommend
-moving the old directory out of the way, extracting the new copy in
-its place and then copying the old /config/ampache.cfg.php, /rest/.htaccess,
-and /play/.htaccess files if any. All database updates will be handled by Ampache.
+Right now, there are no dedicated tar ball releases for Ampache Sermon Edition. So the installation via git clone is recommended. Alternatively, you can download a generated tar ball from github (should be quite the same).
+
+1. clone (checkout) desired ampache sermon-edition branch or tag using git client. E.g.
+   `git clone -b sermon-edition https://github.com/4irmann/ampache-sermon-edition.git`
+2. copy files to your ftp server.
+   Hint: don't copy the following files and folders (they are not needed):
+
+```bash
+.git
+.github
+.gitattributes
+.gitignore
+nbproject
+.phpcs
+.scrutinizer.yml
+.tgitconfig
+.travis.yml
+.tx
+```
+
+3. Optionally replace the following files with your own version 
+
+```bash
+favicon.ico
+themes/reborn/images/ampache.png
+```
+
+4. prepare database 
+
+5. Open webbrowser and run `install.php`, e.g. http://ampache.mydomain.org/install.phpcs
+
+6. move `install.php` to `install.php.back` (or delete it)
+
+7. Adjust `config/ampache.cfg.php` as you like. The following settings are recommended for public anonymous Ampache "sermon" hosting:
+
+   ```properties
+   ; if key is not already secure (by installer.php), adjust it
+   secrety_key = "<your secret key here>" 
+   
+   ; makes no sense for public anonymous access
+   use_auth = "false"
+   
+   ; ratings clutter the UI, so we disable it
+   ratings = "false"
+   
+   ; makes no sense for public anonymous access
+   userflags = "false"
+   
+   ; Sociable
+   ; This turns on / off all of the "social" features of ampache
+   ; default is on, but if you don't care and just want sermons
+   ; turn this off to disable all social features.
+   sociable = "false"
+   
+   ; This turns on / off all licensing features on Ampache
+   licensing = "false"
+   
+   ; Art Gather Order (we just use (mp3) tags as source)
+   art_order = "tags"
+   
+   ; lastfm makes no sense for sermons
+   lastfm_api_key = ""
+   
+   ; makes no sense for sermons (?)
+   wanted = "false"
+   
+   ; makes no sense for public anonymous access 
+   channel = "false"
+   
+   ; we support no live streams
+   live_stream = "false"
+   
+   ; we support no podcasts
+   podcast = "false"
+   
+   ; no statistics in UI 
+   show_footer_statistics = "false"
+   
+   ; Makes no sense for public anonymous access
+   allow_public_registration = "false"
+   
+   ; E.g. important in Germany (DSGVO)
+   cookie_disclaimer = "true" 
+   
+   ; Needed if https is used
+   force_ssl = "true"
+   ```
+
+8. If you need redirection to https, you can add the following `.htaccess` file to top level (e.g. `public_html/amp`) folder:
+
+```php
+# BEGIN Ampache
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteCond %{HTTP_HOST} ^ampache\.mydomain\.org [NC]
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://ampache.mydomain.org/$1 [R,L]
+RewriteRule ^index\.php$ browse.php?action=song [L]
+</IfModule>
+# END Ampache
+```
+
+Hints: some files are automatically created during installation, e.g.;
+
+```bash
+header.inc.php
+config/ampache.cfg.php
+lib/components
+lib/vendor
+play/.htaccess
+rest/.htaccess
+```
+
+For further reading, see original Ampache installation hints in  [Ampache Wiki](https://github.com/ampache/ampache/wiki/Installation)
+
+## Upgrading to new version via git cloning
+
+1. clone (checkout) desired ampache branch or tag
+2. read `docs/CHANGELOG.md`and install / upgrade instructions in `README.md`
+3. **Important:** make a backup of your files (ftp server) and the database.
+   Some old files will be needed later on
+4. Delete all old files on your ftp server account
+5. copy all new files to your ftp server 
+   Hint: don't copy the following files and folders (they are not needed):
+
+```bash
+.git
+.github
+.gitattributes
+.gitignore
+nbproject
+.phpcs
+.scrutinizer.yml
+.tgitconfig
+.travis.yml
+.tx
+```
+
+6. diff / merge compare old `config/ampache.cfg.php `  with the new `config/ampache.cfg.php.dist` and adjust old `config/ampache.cfg.php` according to your needs. That's important since config defaults may have changed, or new config features may be available ! Use e.g. a merge tool like meld for that.
+
+7. upload the following old files to your ftp account:
+
+   ```bash
+   config/ampache.cfg.php # your merged old+new version !
+   rest/.htaccess # optional
+   play/.htaccess # optional
+   favicon.ico # optional
+   themes/reborn/images/ampache.png # optional
+   .htaccess # optional for e.g. https
+   ```
+
+8. Just relaunch Ampache url in browser and thus all other necessary upgrade tasks will be handled by Ampache (e.g. database updates)
+
+For further reading, see original Ampache upgrade hints in  [Ampache Wiki](https://github.com/ampache/ampache/wiki/Installation)
+
+## Configuration via Web GUI
+
+TODO
 
 License
 -------
 
-Ampache is free software; you can redistribute it and/or
+Ampache Sermon Edition is free software; you can redistribute it and/or
 modify it under the terms of the GNU Affero General Public License v3 (AGPLv3)
 as published by the Free Software Foundation.
 
-Ampache includes some [external modules](https://github.com/ampache/ampache/blob/develop/composer.lock) that carry their own licensing.
+Ampache Sermon Edition includes some [external modules](https://github.com/ampache/ampache/blob/develop/composer.lock) that carry their own licensing.
 
 Translations
 ------------
 
-Ampache is currently translated (at least partially) into the
-following languages. If you are interested in updating an existing
-translation, simply visit us on [Transifex](https://www.transifex.com/ampache/ampache).
-If you prefer it old school or want to work offline, take a look at [/locale/base/TRANSLATIONS](https://github.com/ampache/ampache/blob/develop/locale/base/TRANSLATIONS.md)
+Ampache Sermon Edition is currently only available in German. Even English is **NOT SUPPORTED.** So German is the leading language for Sermon Edition.
+If you want to adjus [/locale/base/TRANSLATIONS](https://github.com/ampache/ampache/blob/develop/locale/base/TRANSLATIONS.md)
 for more instructions.
-
-Translation progress so far:
-
-[![](https://www.transifex.com/_/charts/redirects/ampache/ampache/image_png/messagespot/)](https://www.transifex.com/projects/p/ampache/)
 
 Credits
 -------
 
 Thanks to all those who have helped make Ampache awesome: [Credits](docs/ACKNOWLEDGEMENTS)
 
-
-Contact Us
-----------
-
-Hate it? Love it? Let us know! Dozens of people send ideas for amazing new features, report bugs and further develop Ampache actively. Be a part of Ampache with it's more than 10 years long history and get in touch with an awesome and friendly community!
-
-* For Live discussions, visit us on our IRC Channel at chat.freenode.net #ampache or alternative via a [web based chat client](https://webchat.freenode.net)
-* For harder cases or general discussion about Ampache take a look at our [Google Groups Forum](https://groups.google.com/forum/#!forum/ampache)
-* Found a bug or Ampache isn't working as expected? Please refer to the [Issues Template](https://github.com/ampache/ampache/wiki/Issues) and head over to our [Issue Tracker](https://github.com/ampache/ampache/issues) 
-
-Further Information and basic Help
-----------------------------------
-
-* Everything related to the Ampache Project can be found on our [Public Repository](https://github.com/ampache)
-* Want to know, how to get Apache to work or learn more about the functions? See our [Documentation](https://github.com/ampache/ampache/wiki)
-
-We hope to see you soon and that you have fun with this Project!
-
-[Team Ampache](docs/ACKNOWLEDGEMENTS)
+Ampache Sermon Edition was done by 4irmann
