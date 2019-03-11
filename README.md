@@ -184,7 +184,7 @@ nbproject
 
 8. Just relaunch Ampache url in browser and thus all other necessary upgrade tasks will be handled by Ampache (e.g. database updates)
 
-For further reading, see original Ampache installtion hints in [Ampache Wiki](https://github.com/ampache/ampache/wiki/Installation)
+For further reading, see original Ampache installation hints in [Ampache Wiki](https://github.com/ampache/ampache/wiki/Installation)
 
 ## Configuration via Web GUI
 
@@ -201,7 +201,7 @@ Ampache Sermon Edition includes some [external modules](https://github.com/ampac
 ## Translations
 
 Ampache Sermon Edition is currently only available in German. Even English is **NOT SUPPORTED.** So German is the leading language for Sermon Edition.
-If you want to translate from German to another language have a look at `/local/de_DE/LC_MESSAGES`. Search e.g. for the word `song`, or even better make a diff with original Ampache German translation. See also [/locale/base/TRANSLATIONS](https://github.com/4irmann/ampache-sermon-edition/blob/develop/locale/base/TRANSLATIONS.md) for more instructions.
+If you want to translate from German to another language have a look at `/local/de_DE/LC_MESSAGES`. Search e.g. for the word `song`, or even better make a diff with original Ampache German LC_MESSAGES file. See also [/locale/base/TRANSLATIONS](https://github.com/4irmann/ampache-sermon-edition/blob/develop/locale/base/TRANSLATIONS.md) for more instructions.
 
 ## Credits
 
