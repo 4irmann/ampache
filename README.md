@@ -2,9 +2,9 @@
 =======
 ## Sermon Edition (German only!)
 
-The **Ampache Sermon Edition** is a slightly modified version of the original Ampache  web media player. It is meant to be a special media player for playback of publicly available sermons, which are usually recorded during christian sunday morning services. For that purpose some Ampache  features were modified: 
+The **Ampache Sermon Edition** is a slightly modified version of the original Ampache  web media player. It is meant to be a special media player for playback of publicly available christian sermons, which are usually recorded during sunday morning services. For that purpose some Ampache  features were modified: 
 
-1. main goal was to have a slick and less cluttered UI for the anonymous user who just wants to listen to a sermon or download a sermon as MP3 file. Less is more !
+1. main goal was to have a slick and less cluttered UI for anonymous users who just want to listen to sermons or download sermons as MP3 files
 2. the German translation files were customized so that the wording fits to the "sermon" context. E.g. the word "**song**" was replaced by the german word "**Predigt**". And the word "**artist**" was replaced by the german word "**Prediger**" and so on.
 3. Sermons are publicly available. So a lot of Ampache features which are related to user login were deactivated or removed (e.g. via specific `ampache.cfg.php ` and/or modification of some php files). Also social network integration and external music catalogues (e.g. lastfm)  were disabled.
 
@@ -68,7 +68,7 @@ themes/reborn/images/ampache.png
 
    ```properties
    ; if key is not already secure (by installer.php), adjust it
-   secrety_key = "<your secret key here>" 
+   secret_key = "<your secret key here>" 
    
    ; makes no sense for public anonymous access
    use_auth = "false"
