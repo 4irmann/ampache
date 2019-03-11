@@ -69,7 +69,6 @@
     </li>
     <?php if (AmpConfig::get('allow_video')) {
             ?>
-        
         <li><h4 class="header"><span class="sidebar-header-title"><?php echo T_('Video') ?></span><img src="<?php echo AmpConfig::get('web_path') . AmpConfig::get('theme_path'); ?>/images/icons/icon_all.png" class="header-img <?php echo ($_COOKIE['sb_browse_video'] == 'collapsed') ? 'collapsed' : 'expanded'; ?>" id="browse_video" lt="<?php echo T_('Expand/Collapse'); ?>" title="<?php echo T_('Expand/Collapse'); ?>" /></h4>
             <ul class="sb3" id="sb_home_browse_video">
                 <li id="sb_home_browse_video_clip"><a href="<?php echo $web_path ?>/browse.php?action=clip"><?php echo T_('Music Clips') ?></a></li>
@@ -79,7 +78,6 @@
                 <li id="sb_home_browse_video_tagsVideo"><a href="<?php echo $web_path ?>/browse.php?action=tag&type=video"><?php echo T_('Tag Cloud') ?></a></li>
             </ul>
         </li>
-        
     <?php
         } ?>
     <?php
@@ -186,7 +184,6 @@
         </ul>
     </li>
     -->
-    
     <li>
         <h4 class="header"><span class="sidebar-header-title" title="<?php echo T_('Search'); ?>"><?php echo T_('Search'); ?></span><img src="<?php echo AmpConfig::get('web_path') . AmpConfig::get('theme_path'); ?>/images/icons/icon_all.png" class="header-img <?php echo ($_COOKIE['sb_search'] == 'expanded') ? 'expanded' : 'collapsed'; ?>" id="search" alt="<?php echo T_('Expand/Collapse'); ?>" title="<?php echo T_('Expand/Collapse'); ?>" /></h4>
         <ul class="sb3" id="sb_home_search" style="<?php if (!isset($_COOKIE['sb_search'])) {

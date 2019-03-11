@@ -17,7 +17,9 @@ For original Ampache documentation have a look at: [www.ampache.org](http://ampa
     * lighttpd
     * nginx
     * IIS
-* PHP 5.4 or greater.
+
+* PHP 5.6 or greater.
+
 * PHP modules:
     * PDO
     * PDO_MYSQL
@@ -26,6 +28,10 @@ For original Ampache documentation have a look at: [www.ampache.org](http://ampa
     * json
     * simplexml (optional)
     * curl (optional)
+    * For FreeBSD The following modules must be loaded:
+      * php-xml
+      * php-dom
+
 * MySQL 5.x
 
 ## Installation from scratch via git cloning 

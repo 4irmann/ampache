@@ -148,12 +148,11 @@ switch ($_REQUEST['action']) {
         $browse->show_objects(null, $argument);
         $results[$browse->get_content_div()] = ob_get_clean();
     break;
-    /*
     case 'get_filters':
         ob_start();
         require_once AmpConfig::get('prefix') . UI::find_template('browse_filters.inc.php');
         $results['browse_filters'] = ob_get_clean();
-    break;*/
+    break;
     case 'options':
         $option = $_REQUEST['option'];
         $value  = $_REQUEST['value'];
