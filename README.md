@@ -2,16 +2,15 @@
 =======
 ## Sermon Edition (German only!)
 
-The **Ampache Sermon Edition** is a slightly modified version of the original Ampache  web media player. It is meant to be a special media player for playback of publicly available christian sermons, which are usually recorded during sunday morning services. For that purpose some Ampache  features were modified: 
+The **Ampache Sermon Edition** is a slightly modified version of the original Ampache  web media player. It is meant to be a special media player for playback of publicly available christian sermons, which are usually recorded during sunday morning services. For that purpose some Ampache features were modified: 
 
 1. main goal was to have a slick and less cluttered UI for anonymous users who just want to listen to sermons or download sermons as MP3 files
 2. the German translation files were customized so that the wording fits to the "sermon" context. E.g. the word "**song**" was replaced by the german word "**Predigt**". And the word "**artist**" was replaced by the german word "**Prediger**" and so on.
-3. Sermons are publicly available. So a lot of Ampache features which are related to user login were deactivated or removed (e.g. via specific `ampache.cfg.php ` and/or modification of some php files). Also social network integration and external music catalogues (e.g. lastfm)  were disabled.
+3. Sermons are publicly available. So a lot of Ampache features which are related to user login were deactivated or removed (e.g. via specific `ampache.cfg.php` and/or modification of some php files). Also social network integration and external music catalogues (e.g. lastfm) were disabled.
 
 For original Ampache documentation have a look at: [www.ampache.org](http://ampache.org/) | [ampache.github.io](http://ampache.github.io)
 
-Requirements
-------------
+## Requirements
 
 * A web server. All of the following have been used, though Apache receives the most testing:
     * Apache
@@ -34,7 +33,7 @@ Requirements
 Right now, there are no dedicated tar ball releases for Ampache Sermon Edition. So the installation via git clone is recommended. Alternatively, you can download a generated tar ball from github (should be quite the same).
 
 1. clone (checkout) desired ampache sermon-edition branch or tag using git client. E.g.
-   `git clone -b sermon-edition https://github.com/4irmann/ampache-sermon-edition.git`
+   `git clone https://github.com/4irmann/ampache-sermon-edition.git`
 2. copy files to your ftp server.
    Hint: don't copy the following files and folders (they are not needed):
 
@@ -191,8 +190,7 @@ For further reading, see original Ampache upgrade hints in  [Ampache Wiki](https
 
 TODO
 
-License
--------
+## License
 
 Ampache Sermon Edition is free software; you can redistribute it and/or
 modify it under the terms of the GNU Affero General Public License v3 (AGPLv3)
@@ -200,15 +198,13 @@ as published by the Free Software Foundation.
 
 Ampache Sermon Edition includes some [external modules](https://github.com/ampache/ampache/blob/develop/composer.lock) that carry their own licensing.
 
-Translations
-------------
+## Translations
 
 Ampache Sermon Edition is currently only available in German. Even English is **NOT SUPPORTED.** So German is the leading language for Sermon Edition.
 If you want to adjus [/locale/base/TRANSLATIONS](https://github.com/ampache/ampache/blob/develop/locale/base/TRANSLATIONS.md)
 for more instructions.
 
-Credits
--------
+## Credits
 
 Thanks to all those who have helped make Ampache awesome: [Credits](docs/ACKNOWLEDGEMENTS)
 
