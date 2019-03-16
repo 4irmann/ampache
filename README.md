@@ -2,11 +2,11 @@
 =======
 ## Sermon Edition (German only!)
 
-The **Ampache Sermon Edition** is a slightly modified version of the original Ampache  web media player. It is meant to be a special media player for playback of publicly available christian sermons, which are usually recorded during sunday morning services. For that purpose some Ampache features were modified: 
+The **Ampache Sermon Edition** is a slightly modified version of the original Ampache  web media server. It is meant to be a special media player for playback of publicly available christian sermons, which are usually recorded during sunday morning services. For that purpose some Ampache features were modified: 
 
-1. main goal was to have a slick and less cluttered UI for anonymous users who just want to listen to sermons or download sermons as MP3 files
+1. main goal was to have a slick and less cluttered UI for anonymous users who just want to listen to sermons or download sermons as MP3 files. 
 2. the German translation files were customized so that the wording fits to the "sermon" context. E.g. the word "**song**" was replaced by the german word "**Predigt**". And the word "**artist**" was replaced by the german word "**Prediger**" and so on.
-3. Sermons are publicly available. So a lot of Ampache features which are related to user login were deactivated or removed (e.g. via specific `ampache.cfg.php` and/or modification of some php files). Also social network integration and external music catalogues (e.g. lastfm) were disabled.
+3. Sermons are most often publicly available. So a lot of Ampache features which are related to user login were deactivated (e.g. via specific `ampache.cfg.php`). Also some menus were reduced to a minimum (some php files for the menus were slightly modified). Finally all plugins and modules for external music catalogues (e.g. lastfm) and social network integration and  were disabled.
 
 For original Ampache documentation have a look at: [www.ampache.org](http://ampache.org/) | [ampache.github.io](http://ampache.github.io)
 
@@ -63,13 +63,19 @@ favicon.ico
 themes/reborn/images/ampache.png
 ```
 
-4. prepare database 
+4. Manually install required external php and JavaScript components and libraries: 
 
-5. Open webbrowser and run `install.php`, e.g. http://ampache.mydomain.org/install.phpcs
+   - download the  `ampache_x.x.x_all.zip`  archive from the original github Ampache project releases page. It has to be exactly the same version as the ampache-sermon-edition. E.g. for the ampache-sermon-edition-3.9.0 download https://github.com/ampache/ampache/releases/download/3.9.0/ampache-3.9.0_all.zip
+   - unpack the archive and upload the unpacked folders `lib/vendor` and `lib/component` completely to your ampache-sermon-edition ftp account `lib` folder. 
+   - alternatively you can install these components and libraries by running composer as described in original ampache documentation. But this is only possible if you have ssh access to your web server.
 
-6. move `install.php` to `install.php.back` (or delete it)
+5. prepare database 
 
-7. Adjust `config/ampache.cfg.php` as you like. The following settings are recommended for public anonymous Ampache "sermon" hosting:
+6. Open webbrowser and run `install.php`, e.g. http://ampache.mydomain.org/install.phpcs
+
+7. move `install.php` to `install.php.back` (or delete it)
+
+8. Adjust `config/ampache.cfg.php` as you like. The following settings are recommended for public anonymous Ampache "sermon" hosting:
 
    ```properties
    ; if key is not already secure (by installer.php), adjust it
@@ -124,7 +130,7 @@ themes/reborn/images/ampache.png
    force_ssl = "true"
    ```
 
-8. If you need redirection to https, you can add the following `.htaccess` file to top level (e.g. `public_html/amp`) folder:
+9. If you need redirection to https, you can add the following `.htaccess` file to top level (e.g. `public_html/amp`) folder:
 
 ```php
 # BEGIN Ampache
@@ -139,15 +145,13 @@ RewriteRule ^index\.php$ browse.php?action=song [L]
 # END Ampache
 ```
 
-Hints: some files are automatically created during installation, e.g.;
+Hints: some files could automatically be created during installation, e.g.;
 
 ```bash
 header.inc.php
 config/ampache.cfg.php
-lib/components
-lib/vendor
-play/.htaccess
-rest/.htaccess
+play/.htaccess # if not created automatically, you can add it manually
+rest/.htaccess # if not created automatically, you can add it manually
 ```
 
 For further reading, see original Ampache installation hints in  [Ampache Wiki](https://github.com/ampache/ampache/wiki/Installation)
@@ -156,8 +160,8 @@ For further reading, see original Ampache installation hints in  [Ampache Wiki](
 
 1. clone (checkout) desired ampache branch or tag
 2. read `docs/CHANGELOG.md`and install / upgrade instructions in `README.md`
-3. **Important:** make a backup of your files (ftp server) and the database.
-   Some old files will be needed later on
+3. **Important:** make a backup of your files (ftp server) and the database. Especially make a backup of `config/ampache.cfg.php` and other files which were added or modified by yourself.
+   All those files will be needed later on.
 4. Delete all old files on your ftp server account
 5. copy all new files to your ftp server account
    Hint: don't copy the following files and folders (they are not needed):
@@ -188,13 +192,40 @@ nbproject
    .htaccess # optional for e.g. https
    ```
 
-8. Just relaunch Ampache url in browser and thus all other necessary upgrade tasks will be handled by Ampache (e.g. database updates)
+8. Manually install required external php and JavaScript components and libraries: 
+
+   - download the  `ampache_x.x.x_all.zip`  archive from the original github Ampache project releases page. It has to be exactly the same version as the ampache-sermon-edition. E.g. for the ampache-sermon-edition-3.9.0 download https://github.com/ampache/ampache/releases/download/3.9.0/ampache-3.9.0_all.zip
+   - unpack the archive and upload the unpacked folders `lib/vendor` and `lib/component` completely to your ampache-sermon-edition ftp account `lib` folder. 
+   - alternatively you can install these components and libraries by running composer as described in original ampache documentation. But this is only possible if you have ssh access to your web server.
+
+9. Just relaunch Ampache url in browser and thus all other necessary upgrade tasks will be handled by Ampache (e.g. database updates)
 
 For further reading, see original Ampache installation hints in [Ampache Wiki](https://github.com/ampache/ampache/wiki/Installation)
 
-## Configuration via Web GUI
+## Recommend configuration via Ampache GUI
 
-TODO
+### Modules
+
+- disable all localplay modules
+- disable all plugins
+- disable all external catalog modules despite "local" 
+
+### Catalogs
+
+- Add local catalog (e.g. to a media webfolder which stores your sermons)
+
+### Users
+
+- add a second admin user (e.g. for sermon uploads)
+
+### Server Config
+
+- streaming: playback:  chose web player or streaming
+- adjust to your needs
+
+## Maintenance
+
+Have a look at Other tools in Ampache GUI. Especially the clear cache function can be helpfull.
 
 ## License
 
