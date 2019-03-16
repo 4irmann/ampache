@@ -198,7 +198,9 @@ nbproject
    - unpack the archive and upload the unpacked folders `lib/vendor` and `lib/component` completely to your ampache-sermon-edition ftp account `lib` folder. 
    - alternatively you can install these components and libraries by running composer as described in original ampache documentation. But this is only possible if you have ssh access to your web server.
 
-9. Just relaunch Ampache url in browser and thus all other necessary upgrade tasks will be handled by Ampache (e.g. database updates)
+9. **IMPORTANT** remove install.php from ftp account or rename it to install.php.back
+
+10. Just relaunch Ampache url in browser and thus all other necessary upgrade tasks will be handled by Ampache (e.g. database updates)
 
 For further reading, see original Ampache installation hints in [Ampache Wiki](https://github.com/ampache/ampache/wiki/Installation)
 
